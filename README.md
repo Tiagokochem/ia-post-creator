@@ -78,6 +78,7 @@ curl -X POST http://localhost:8000/api/generate-post \
 
 ## 📸 Layout
 
+![ia-post](https://github.com/user-attachments/assets/a19d10e6-be55-4619-947a-6d5f1ebefd29)
 
 ---
 
