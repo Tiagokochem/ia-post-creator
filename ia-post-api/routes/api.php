@@ -19,5 +19,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Lida com qualquer requisição OPTIONS para evitar erro CORS
+Route::options('/{any}', function (Request $request) {
+    return response()->json(['status' => 'OK']);
+})->where('any', '.*');
+
+
 
 Route::post('/generate-post', [IAController::class, 'generatePost']);

@@ -14,7 +14,9 @@ class IAController extends Controller
         ]);
 
         $theme = $request->input('theme');
-
+       
+        // integração real com OpenAI (mantida comentada por enquanto)
+        
         $response = Http::withToken(env('OPENAI_API_KEY'))->post('https://api.openai.com/v1/chat/completions', [
             'model' => 'gpt-3.5-turbo',
             'messages' => [
@@ -25,5 +27,6 @@ class IAController extends Controller
         return response()->json([
             'post' => $response['choices'][0]['message']['content'] ?? 'Erro ao gerar conteúdo.'
         ]);
+        
     }
 }
